@@ -32,12 +32,11 @@ function Weather() {
       minMax: document.querySelector('.card__min_max')
     }
 
-    const currentWeather = data.forecast[0]
-
     for (let key in fields) {
       if (key !== 'minMax') fields[key].innerHTML = data[key] + this.getSymbol(key)
     }
 
+    const currentWeather = data.forecast[0]
     fields.minMax.innerHTML = `${currentWeather.min}°/${currentWeather.max}°`
   }
 
