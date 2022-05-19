@@ -23,23 +23,27 @@ function Weather() {
 
   this.setInfos = data => {
     const fields = {
-      location: document.querySelector('.card__location'),
-      hour: document.querySelector('.card__hour'),
-      label: document.querySelector('.card__weather_label'),
-      temperature: document.querySelector('.card__temperature'),
-      minMax: document.querySelector('.card__min_max'),
+      city: document.querySelector('.card__location'),
+      time: document.querySelector('.card__hour'),
+      currently: document.querySelector('.card__weather_label'),
+      temp: document.querySelector('.card__temperature'),
+      wind_speedy: document.querySelector('.card__wind'),
       humidity: document.querySelector('.card__humidity'),
-      wind: document.querySelector('.card__wind')
+      minMax: document.querySelector('.card__min_max')
     }
 
     const currentWeather = data.forecast[0]
 
-    fields.location.innerHTML = data.city
-    fields.hour.innerHTML = data.time
-    fields.label.innerHTML = data.currently
-    fields.temperature.innerHTML = `${data.temp}°`
+    for (let key in fields) {
+      if (key !== 'minMax') fields[key].innerHTML = data[key] + this.getSymbol(key)
+    }
+
     fields.minMax.innerHTML = `${currentWeather.min}°/${currentWeather.max}°`
-    fields.humidity.innerHTML = `${data.humidity}%`
-    fields.wind.innerHTML = data.wind_speedy
+  }
+
+  this.getSymbol = key => {
+    if (key === 'temp') return '°'
+    if (key === 'humidity') return '%'
+    return ''
   }
 }
