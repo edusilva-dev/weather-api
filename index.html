@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Clima Card</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card__location"><div class="loader"></div></div>
+        <img class="card__weather_icon" src="images/night.png" alt="Noite" />
+        <div class="card__content">
+          <div class="card__weather">
+            <div class="card__hour"><div class="loader"></div></div>
+            <span class="card__weather_label"><div class="loader"></div></span>
+          </div>
+          <div class="card__heat">
+            <div class="card__temperature"><div class="loader"></div></div>
+            <div class="card__min_max"><div class="loader"></div></div>
+          </div>
+          <div class="card__infos">
+            <span class="card__humidity"><div class="loader"></div></span>
+            <span class="card__wind"><div class="loader"></div></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="js/weather.js"></script>
+  </body>
+</html>
