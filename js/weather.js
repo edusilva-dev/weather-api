@@ -1,5 +1,4 @@
 import env from '../env.js'
-console.log(env)
 
 window.onload = () => {
   new Weather().init()
@@ -8,7 +7,6 @@ window.onload = () => {
 function Weather() {
   this.init = async () => {
     const data = await this.getData()
-    console.log(data)
     this.setInfos(data)
   }
 
@@ -43,6 +41,5 @@ function Weather() {
     fields.minMax.innerHTML = `${currentWeather.min}°/${currentWeather.max}°`
     fields.humidity.innerHTML = `${data.humidity}%`
     fields.wind.innerHTML = data.wind_speedy
-    // fields.
   }
 }
